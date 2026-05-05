@@ -58,6 +58,11 @@ public class BorrowService {
             System.out.println("Error: Item '" + item.getTitle() + "' is already borrowed!");
             return;
         }
+        // CHALLENGE 3: Using interface methods instead of direct setter
+        item.checkout();
+        member.borrowItem(item);
+        System.out.println("Success! Borrowed: " + item.getTitle());
+
 
         // Action Update both sides
         item.setAvailable(false);
