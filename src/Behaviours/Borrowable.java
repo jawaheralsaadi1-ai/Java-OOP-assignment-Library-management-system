@@ -1,4 +1,4 @@
-package behaviours;
+package Behaviours;
 
 public interface Borrowable {
 }
