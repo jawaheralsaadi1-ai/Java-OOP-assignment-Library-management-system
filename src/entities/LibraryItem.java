@@ -1,4 +1,7 @@
-package entities;
+//package for grouping related classes
+package entities;// Must be matches with our file name
+// its means that this class is inside folder called entities
+//Using to organize the project
 
 /**Make this class 'abstract' because a generic "Library Item" doesn't exist in our library.
  * It's just a blueprint that Books and Magazines will follow to stay organized.

@@ -1,5 +1,7 @@
-package entities;
-
+//package for grouping related classes
+package entities;// Must be matches with our file name
+// its means that this class is inside folder called entities
+//Using to organize the project
 /**
  *
  *  After implement abstract LibraryItem as a base
