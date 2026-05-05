@@ -11,8 +11,13 @@ import entities.Member;
  * I passed them as references so this class doesn't have to manage lists itself.
  */
 public class BorrowService {
+
     private final LibraryService libraryService;
     private final MemberService memberService;
+
+    // Challenge 2: Enforce limit. I used 'static final' because the limit
+    // is a rule for the whole library, not just one instance.
+    private static final int MAX_ITEMS = 3;
 
     // Constructor: Needs both services to work
     public BorrowService(LibraryService libraryService, MemberService memberService) {
@@ -37,6 +42,18 @@ public class BorrowService {
             System.out.println("Error: Item not found!");
             return;
         }
+        if (!item.isAvailable()) {
+            System.out.println("Error: Item '" + item.getTitle() + "' is already borrowed!");
+            return;
+        }
+
+        // --- Challenge 2 Logic: Check the limit ---
+        // We check how many items the member has before allowing a new one
+        if (member.getBorrowedItems().size() >= MAX_ITEMS) {
+            System.out.println("Error: " + member.getName() + " has reached the borrowing limit of " + MAX_ITEMS + " items!");
+            return;
+        }
+
         if (!item.isAvailable()) {
             System.out.println("Error: Item '" + item.getTitle() + "' is already borrowed!");
             return;
