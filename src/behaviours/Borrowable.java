@@ -1,7 +1,7 @@
 package behaviours;
 
 /**
- *
+ *CHALLENGE 3: Interface Implementation
  * This is the 'Contract'. Any class implementing this MUST be able to
  * handle being checked out and returned.
  */
